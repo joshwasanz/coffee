@@ -2,7 +2,7 @@
 
 ![Coffee Logo](https://via.placeholder.com/200x80?text=Coffee)
 
-Welcome to **Coffee**, a platform where developers can share knowledge, ideas, and inspiration. Coffee is a community-driven platform and an exact clone of [dev.to](https://dev.to), providing the same functionality but with our unique branding and enhancements.
+Welcome to **Coffee**, a platform where developers can share knowledge, ideas, and inspiration. Coffee is a community-driven platform providing the same functionality but with our unique branding and enhancements.
 
 ## Features
 
