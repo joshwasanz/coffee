@@ -1,4 +1,8 @@
 # Coffee
+domain.com/api/users
+domain.com/api/posts
+domain.com/api/post/id
+
 
 ![Coffee Logo](https://via.placeholder.com/200x80?text=Coffee)
 
