@@ -3,6 +3,9 @@ from . import views
 
 urlpatterns = [
     #for templates
+
+    path("create-post/",view=views.create_post,name="create-post"),
+
     path("posts/",view=views.posts,name="posts"),
     path("post/<str:pk>/",view=views.post,name="post"),
     path("update-post/<str:pk>/",view=views.update_post,name="update-post"),
@@ -10,4 +13,5 @@ urlpatterns = [
 
 
     #for api
+
 ]
