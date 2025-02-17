@@ -54,4 +54,4 @@ def delete_post(request,pk):
         post.delete()
         return redirect('posts')
     
-    return redirect(request,"posts/delete.html",{'obj':post})
+    return render(request,"posts/delete.html",{'obj':post})
