@@ -3,10 +3,11 @@ from django.db import models
 # Create your models here.
 
 class Post(models.Model):
+
     # author = connect to user model
     title = models.CharField(max_length=255)
     # picture = optional 
-    caption_main = models.TextField()
+    caption = models.TextField(null=True,blank=True)
     description = models.TextField() #optional
     # hashtags = optional
     created_at = models.DateTimeField(auto_now_add=True)
