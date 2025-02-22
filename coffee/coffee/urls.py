@@ -23,5 +23,6 @@ urlpatterns = [
 
 
     #api
-    path("api/",include("posts.api.urls"))
+    path("api/",include("posts.api.urls")),
+    path("api/",include("users.api.urls"))
 ]
