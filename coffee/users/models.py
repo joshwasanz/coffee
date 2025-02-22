@@ -25,7 +25,7 @@ class User(AbstractUser):
     twitter_profile = models.URLField(max_length=200, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateField(auto_now=True)
-    followers = models.ManyToManyField('self',symmetrical=False,related_name='following')
+    # followers = models.ManyToManyField('self',symmetrical=False,related_name='following')
 
     class Meta:
         db_table = 'users'

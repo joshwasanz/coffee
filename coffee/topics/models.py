@@ -8,7 +8,7 @@ class Topic(models.Model):
     description = models.TextField(max_length=500, blank=True)
     icon = models.ImageField(upload_to='topic_icons/',null=True,blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    followers = models.ManyToManyField('users.User',related_name='followed_topics')
+    # followers = models.ManyToManyField('users.User',related_name='followed_topics')
 
     class Meta:
         db_table = 'topics'
