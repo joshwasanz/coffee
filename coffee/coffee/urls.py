@@ -20,7 +20,4 @@ from django.urls import path,include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-
-    #apps templates
-    path("",include("posts.urls"))
 ]

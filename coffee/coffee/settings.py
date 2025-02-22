@@ -31,6 +31,15 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+     #custom apps
+    'users',
+    'posts',
+    'comments',
+    'likes',
+    'feeds',
+    'topics',
+
+    
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -38,8 +47,9 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
 
-    #custom apps
-    'posts'
+    'rest_framework',
+
+   
 
 ]
 

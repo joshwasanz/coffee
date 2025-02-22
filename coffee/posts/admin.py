@@ -2,6 +2,6 @@ from django.contrib import admin
 
 from .models import Post
 
-# Register your models here.
+# Get all models dynamically and register them
 
 admin.site.register(Post)
