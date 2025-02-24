@@ -35,6 +35,9 @@ ALLOWED_HOSTS = [
     "localhost"
 ]
 
+AUTH_USER_MODEL = 'users.User'
+
+
 
 # Application definition
 
