@@ -1,11 +1,13 @@
 from rest_framework import status
 from rest_framework.decorators import api_view,permission_classes
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from posts.models import Post
 from .serializers import PostSerializer
 
 
 @api_view(['GET','POST'])
+@permission_classes([IsAuthenticated])
 def post_list(request):
 
     if request.method == 'GET':
