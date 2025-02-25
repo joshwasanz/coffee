@@ -29,3 +29,6 @@ class User(AbstractUser):
 
     class Meta:
         db_table = 'users'
+
+    def __str__(self):
+        return self.first_name if self.first_name else self.username

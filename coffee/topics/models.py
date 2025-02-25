@@ -9,3 +9,7 @@ class Topic(models.Model):
 
     class Meta:
         db_table = 'topics'
+
+
+    def __str__(self):
+        return f"{self.name}"
