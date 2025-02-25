@@ -7,7 +7,6 @@ from .serializers import PostSerializer
 
 
 @api_view(['GET','POST'])
-# @permission_classes([IsAuthenticated])
 def post_list(request):
 
     if request.method == 'GET':
