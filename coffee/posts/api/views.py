@@ -39,8 +39,8 @@ def get_post(request,pk):
         return Response(serializer.data)
     
     elif request.method == 'PUT':
-        if post.author != request.user:
-            return Response({"detail":"Not authorized"},status=status.HTTP_403_FORBIDDEN)
+        # if post.author != request.user:
+        #     return Response({"detail":"Not authorized"},status=status.HTTP_403_FORBIDDEN)
         serializer = PostSerializer(post,data=request.data,partial=True)
 
         if serializer.is_valid():
@@ -49,8 +49,8 @@ def get_post(request,pk):
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
     elif request.method == 'DELETE':
-        if post.author != request.user:
-            return Response({"detail":"Not authorized"},status=status.HTTP_403_FORBIDDEN)
+        # if post.author != request.user:
+        #     return Response({"detail":"Not authorized"},status=status.HTTP_403_FORBIDDEN)
         
         post.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
