@@ -5,7 +5,7 @@ from django.db import models
 class Post(models.Model):
 
     title = models.CharField(max_length=200)
-    slug = models.SlugField(max_length=250, unique=True)
+    # slug = models.SlugField(max_length=250, unique=True)
     content = models.TextField()
     cover_image = models.ImageField(upload_to='post_covers/',null=True,blank=True)
     author = models.ForeignKey('users.User', on_delete=models.CASCADE,related_name='posts')

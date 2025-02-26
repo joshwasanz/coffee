@@ -4,4 +4,4 @@ from topics.models import Topic
 class TopicSerializer(serializers.ModelSerializer):
     class Meta:
         model = Topic
-        fields = ["id", "name", "slug", "created_at"]
+        fields = ["id", "name", "created_at"]

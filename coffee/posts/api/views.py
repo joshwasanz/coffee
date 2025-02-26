@@ -26,6 +26,32 @@ def post_list(request):
 
             return Response(serializer.data,status=status.HTTP_201_CREATED)
         return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+    
 
+@api_view(['GET', 'PUT', 'DELETE'])
+def get_post(request,pk):
+
+    post = Post.objects.get(id=pk)
+
+    if request.method == 'GET':
+        serializer = PostSerializer(post,context={'request':request})
+        return Response(serializer.data)
+    
+    elif request.method == 'PUT':
+        if post.author != request.user:
+            return Response({"detail":"Not authorized"},status=status.HTTP_403_FORBIDDEN)
+        serializer = PostSerializer(post,data=request.data,partial=True)
+
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
+
+    elif request.method == 'DELETE':
+        if post.author != request.user:
+            return Response({"detail":"Not authorized"},status=status.HTTP_403_FORBIDDEN)
+        
+        post.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
         
 
