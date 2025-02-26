@@ -29,6 +29,7 @@ def post_list(request):
     
 
 @api_view(['GET', 'PUT', 'DELETE'])
+@permission_classes([AllowAny])
 def get_post(request,pk):
 
     post = Post.objects.get(id=pk)
