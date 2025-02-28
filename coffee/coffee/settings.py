@@ -96,7 +96,7 @@ MIDDLEWARE = [
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
-    "https://hangout-six.vercel.app/"
+    "https://hangout-six.vercel.app"
 ]
 
 
