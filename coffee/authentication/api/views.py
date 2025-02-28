@@ -61,7 +61,7 @@ def login_user(request):
 
 
 @api_view(['POST'])
-@permission_classes([IsAuthenticated])
+@permission_classes([AllowAny])
 def logout_user(request):
     try:
         refresh_token = request.data["refresh_token"]
