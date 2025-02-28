@@ -76,5 +76,7 @@ def logout_user(request):
 @permission_classes([IsAuthenticated])
 def get_current_user(request):
     user = request.user
+    print(type(user))
+    
     serializer = UserSerializer(user)
     return Response(serializer.data)

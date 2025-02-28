@@ -60,7 +60,9 @@ INSTALLED_APPS = [
 
     'rest_framework',
     "rest_framework_simplejwt",
-    'rest_framework_simplejwt.token_blacklist'
+    'rest_framework_simplejwt.token_blacklist',
+
+    'corsheaders'
 
    
 
@@ -89,7 +91,14 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 
         'whitenoise.middleware.WhiteNoiseMiddleware',
+         "corsheaders.middleware.CorsMiddleware"
 ]
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://hangout-six.vercel.app/"
+]
+
 
 ROOT_URLCONF = "coffee.urls"
 
