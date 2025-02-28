@@ -12,14 +12,14 @@ from.serializers import UserSerializer
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register_user(request):
-    serializers = UserSerializer(data=request.data)
+    serializer = UserSerializer(data=request.data)
 
-    if serializers.is_valid():
+    if serializer.is_valid():
         user = User(
-            username = serializers.validated_data['username'],
-            email=serializers.validated_data.get('email', ""),
+            username = serializer.validated_data['username'],
+            email=serializer.validated_data.get('email', ""),
         )
-        user.set_password(serializers.validated_data['password'])
+        user.set_password(serializer.validated_data['password'])
         user.save()
 
         refresh = RefreshToken.for_user(user)
@@ -32,7 +32,7 @@ def register_user(request):
 
             status=status.HTTP_201_CREATED)
     
-    return Response(serializers.errors,status=status.HTTP_400_BAD_REQUEST)
+    return Response(serializer.errors,status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['POST'])
