@@ -76,7 +76,10 @@ def logout_user(request):
 @permission_classes([IsAuthenticated])
 def get_current_user(request):
     user = request.user
-    print(type(user))
+
+    print("Authorization header:", request.headers.get('Authorization'))
+    print("Authenticated User:", user)
+    print("Is Authenticated:", request.user.is_authenticated)
     
     serializer = UserSerializer(user)
     return Response(serializer.data)

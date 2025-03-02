@@ -21,7 +21,7 @@ def post_list(request):
         serializer = PostSerializer(data=request.data)
 
         if serializer.is_valid():
-            serializer.save(author=request.user if request.user.is_authenticated else default_author,topics=request.data['topics'])
+            serializer.save(author=request.user,topics=request.data['topics'])
             print(request.data['topics'])
 
             return Response(serializer.data,status=status.HTTP_201_CREATED)
